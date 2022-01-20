@@ -1,0 +1,23 @@
+    <%if(!(typeof err == 'undefined')){%>
+        <%err.forEach(function(error){%>
+            <div class="alert alert-danger" role="alert"><%= error.msg%></div>
+        <%});%>
+    <%}%>
+
+    <%success.forEach(function(msg){%>
+        <%if(msg.length > 0){%>
+            <div class="alert alert-success" role="alert"><%= msg%></div>
+        <%}%>
+    <%});%>
+
+    <%failure.forEach(function(msg){%>
+    <%if(msg.length > 0){%>
+        <div class="alert alert-danger" role="alert"><%= msg%></div>
+    <%}%>
+    <%});%>
+
+    <%error.forEach(function(msg){%>
+    <%if(msg.length > 0){%>
+        <div class="alert alert-danger" role="alert"><%= msg%></div>
+    <%}%>
+    <%});%>

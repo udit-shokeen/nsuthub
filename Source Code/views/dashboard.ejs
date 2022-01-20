@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NsutHub</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- NAVBAR -->
+<div style="margin-bottom: 70px;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-brand">
+                    <a href="/">NSUT-HUB</a>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav navbar-right">
+                    <%if(!(typeof about == 'undefined')){%>
+                        <li><a href="#AboutUs">About Us</a></li>
+                    <%}%>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfAw_Nuqp80xPzj_jKRKyGd0LMXITmYKJlbxJ10eh-utTV4fw/viewform" target="_blank">Join Us</a></li>
+                    <% if(typeof user == 'undefined'){%>
+                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="/login">Sign In</a></li>
+                    <%}else{%>
+                    <li><a href="/profile"><%=user.username%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<div class="container centerText">
+    <%- include('partials/message.ejs')%>
+</div>
+
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Profile:</h1>
+            <h3>Name: <%= user.name%></h3>
+            <h3>Username: <%= user.username%></h3>
+            <h3>E-Mail: <%= user.email%></h3>
+            <h3>Phone Number: <%= user.phoneNumber%></h3>
+            <a href="/profile/edit"><button class="btn btn-md btn-info">Edit</button></a>
+        </div>
+    </div>
+</div>
+
+<%- include("partials/footer")%>

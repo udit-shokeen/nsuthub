@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs")%>
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>NSUT HUB</h1>
+            <h2>Log In</h2>
+            <br><hr><br>
+            <form method="POST" action="/login">
+                <h3>Username</h3>
+                <input type="text" placeholder="RollNo" name="username">
+                <h3>Password</h3>
+                <input type="password" placeholder="password" name="password">
+                <br><br>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer.ejs")%>

@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs")%>
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="jumbotron signUp">
+            <h1>NSUT HUB</h1>
+            <h2>Sign Up</h2>
+            <br><hr><br>
+            <form method="POST" action="/register">
+                <h3>Name</h3>
+                <input type="text" placeholder="name" value="<%= (typeof name == "undefined")?'':name%>" name="name">
+                <h3>Email</h3>
+                <input type="email" placeholder="email" value="<%= (typeof email == "undefined")?'':email%>" name="email">
+                <h3>RollNo(Username)</h3>
+                <input type="text" placeholder="roll no" value="<%= (typeof username == "undefined")?'':username%>" name="username">
+                <h3>PhoneNo</h3>
+                <input type="tel" placeholder="phone" value="<%= (typeof phone == "undefined")?'':phone%>" name="phone">
+                <h3>Password</h3>
+                <input type="password" placeholder="password" name="password">
+                <h3>Confirm Password</h3>
+                <input type="password" placeholder="password" name="password2">
+                <br><br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer.ejs")%>

@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs")%>
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="jumbotron signUp">
+            <form method="POST" action="/profile/edit?_method=PUT">
+                <h3>Name</h3>
+                <input type="text" value="<%=user.name%>" name="name">
+                <h3>Email</h3>
+                <input type="email" value="<%=user.email%>" name="email">
+                <h3>Phone Number</h3>
+                <input type="tel" value="<%=user.phoneNumber%>" name="phone">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer.ejs")%>
